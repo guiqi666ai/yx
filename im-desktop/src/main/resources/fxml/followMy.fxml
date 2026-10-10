@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.yx.controller.FollowMyController"
+      spacing="12">
+    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+
+    <HBox spacing="10">
+        <Label text="关注我的" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+        <Button text="刷新" onAction="#handleRefresh"/>
+    </HBox>
+
+    <ListView fx:id="fansList" VBox.vgrow="ALWAYS"/>
+
+    <Label fx:id="msgLabel" textFill="green"/>
+</VBox>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.yx.controller.ChatController"
+      spacing="10">
+    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+
+    <!-- 标题栏 -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label fx:id="titleLabel" style="-fx-font-size: 14px;"/>
+        <Label fx:id="toUserLabel" text="接收者：未选择" style="-fx-text-fill: gray;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <!-- ★ 群操作下拉菜单 -->
+        <MenuButton fx:id="groupMenu" text="群操作" visible="false" managed="false">
+            <items>
+                <MenuItem text="创建群" onAction="#handleCreateGroup"/>
+                <MenuItem text="邀请好友进群" onAction="#handleInviteIntoGroup"/>
+                <MenuItem text="退群 / 踢人" onAction="#handleLeaveGroup"/>
+                <MenuItem text="禁言" onAction="#handleStopChat"/>
+                <MenuItem text="取消禁言" onAction="#handleCancelStopChat"/>
+                <MenuItem text="设置成员角色" onAction="#handleSetMemberRole"/>
+            </items>
+        </MenuButton>
+
+        <Button text="退出聊天" onAction="#handleClose"/>
+    </HBox>
+
+    <ListView fx:id="messageList" VBox.vgrow="ALWAYS"/>
+
+    <HBox spacing="10">
+        <Button text="删除选中" onAction="#handleDeleteSelected"/>
+        <Button text="加载历史" onAction="#handleLoadHistory"/>
+        <TextField fx:id="inputField" promptText="输入消息..." HBox.hgrow="ALWAYS"/>
+        <Button text="发送" onAction="#handleSend"/>
+        <Button text="图片" onAction="#handleSendImage"/>
+        <Button text="文件" onAction="#handleSendFile"/>
+    </HBox>
+</VBox>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.yx.controller.UserSearchController"
+      spacing="12">
+    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+
+    <HBox spacing="10">
+        <TextField fx:id="searchField" promptText="输入用户名搜索" HBox.hgrow="ALWAYS"/>
+        <Button text="搜索" onAction="#handleSearch"/>
+    </HBox>
+
+    <ListView fx:id="resultList" VBox.vgrow="ALWAYS"/>
+
+    <Label fx:id="msgLabel" textFill="green"/>
+</VBox>

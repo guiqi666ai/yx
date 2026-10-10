@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.yx.controller.MainController"
+      spacing="0" prefWidth="700" prefHeight="500">
+
+    <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <tabs>
+
+            <!-- 1 个人信息 -->
+            <Tab text="个人信息">
+                <content>
+                    <fx:include fx:id="profile" source="profile.fxml"/>
+                </content>
+            </Tab>
+
+            <!-- 2 用户搜索 -->
+            <Tab text="用户搜索">
+                <content>
+                    <fx:include fx:id="userSearch" source="userSearch.fxml"/>
+                </content>
+            </Tab>
+
+            <!-- 3 我的关注 -->
+            <Tab text="我的关注">
+                <content>
+                    <fx:include fx:id="myFollow" source="myFollow.fxml"/>
+                </content>
+            </Tab>
+
+            <!-- 4 关注我的 -->
+            <Tab text="关注我的">
+                <content>
+                    <fx:include fx:id="followMy" source="followMy.fxml"/>
+                </content>
+            </Tab>
+
+            <!-- 5 好友 -->
+            <Tab text="好友">
+                <content>
+                    <fx:include fx:id="friends" source="friends.fxml"/>
+                </content>
+            </Tab>
+            <Tab text="群聊">
+                <content>
+                    <fx:include fx:id="groupList" source="groupList.fxml"/>
+                </content>
+            </Tab>
+        </tabs>
+    </TabPane>
+</VBox>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.yx.controller.GroupListController"
+      spacing="10" prefWidth="400" prefHeight="500">
+    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="我的群聊" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="刷新" onAction="#handleRefresh"/>
+        <Button text="创建群" onAction="#handleCreateGroup"/>
+    </HBox>
+
+    <ListView fx:id="groupListView" VBox.vgrow="ALWAYS"/>
+
+    <Label fx:id="msgLabel" textFill="green"/>
+</VBox>

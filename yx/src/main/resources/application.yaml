@@ -1,0 +1,53 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: LoginApplication
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/yx_login?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      password: 123456
+      database: 0
+      timeout: 3000ms
+      client:
+        type: lettuce
+        lettuce:
+          pool:
+            max-active: 8
+            max-idle: 8
+            min-idle: 2
+            max-wait: 1000ms
+mybatis-plus:
+  # 实体类别名包
+  type-aliases-package: com.yxlogin.entity
+  configuration:
+    map-underscore-to-camel-case: true # 开启驼峰下划线自动转换
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+knife4j:
+  enable: false
+  setting:
+    language: zh_cn
+    enable-footer: false
+    enable-footer-custom: true
+    footer-custom-content: YxLogin
+  basic:
+    enable: false
+jwt:
+  secret: "yx-jwt-key"
+  accessExpire: 900000 #Access Token 有效期：15 分钟 900000
+  refreshExpire: 604800000 #Refresh Token 有效期：7 天
+im:
+  port: 8888
+
+
+
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.yx.controller.ProfileController"
+      spacing="12">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <Label text="个人信息" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="昵称：" prefWidth="60"/>
+        <TextField fx:id="nicknameField" HBox.hgrow="ALWAYS"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="新密码：" prefWidth="60"/>
+        <PasswordField fx:id="newPasswordField" HBox.hgrow="ALWAYS"/>
+    </HBox>
+
+    <HBox spacing="10">
+        <Button text="保存修改" onAction="#handleSave"/>
+        <Button text="注销账户" onAction="#handleRevoke"/>
+        <Button text="退出登录" onAction="#handleLogout"/>
+    </HBox>
+
+    <Label fx:id="msgLabel" textFill="green"/>
+</VBox>

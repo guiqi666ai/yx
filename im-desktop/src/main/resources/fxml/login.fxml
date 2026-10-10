@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.yx.controller.LoginController"
+      spacing="12" alignment="CENTER" prefWidth="360" prefHeight="320">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <Label text="IM 登录" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <TextField fx:id="usernameField" promptText="用户名"/>
+    <PasswordField fx:id="passwordField" promptText="密码"/>
+
+    <Button text="登录" onAction="#handleLogin" prefWidth="240" defaultButton="true"/>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="用户注册" onAction="#handleRegisterUser"/>
+    </HBox>
+
+    <Label fx:id="errorLabel" textFill="red"/>
+</VBox>
