@@ -80,6 +80,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
                 || path.startsWith("/favicon.ico")
                 || path.startsWith("/auth/refresh")
                 || path.startsWith("/login")
+                ||path.startsWith("/register")
                 || path.startsWith("/.well-known/appspecific/com.chrome.devtools.json");
     }
 }

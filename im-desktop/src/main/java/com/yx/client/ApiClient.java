@@ -162,7 +162,12 @@ public class ApiClient {
         Map<String, Object> body = new HashMap<>();
         body.put("username", username);
         body.put("password", password);
-        String resp = doPostJson("/register/user", JSONUtil.toJsonStr(body));
+        // ★ 直接用裸 HttpRequest，不带 Authorization
+        String resp = HttpRequest.post(baseUrl() + "/register/user")
+                .body(JSONUtil.toJsonStr(body))
+                .header("Content-Type", "application/json")
+                .execute()
+                .body();
         return JSONUtil.parseObj(resp).getInt("code") == 200;
     }
 
